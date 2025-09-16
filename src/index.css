@@ -1,0 +1,125 @@
+body {
+    margin: 0%;
+    padding: 0%;
+    font-family:sans-serif;
+}
+.Header {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    align-items: center;
+    padding-left: 35px;
+}
+.nav-link a{
+    font-size: 21px;
+    margin-right: 40px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.nav-link a:hover {
+    color: orange;
+    cursor: pointer;
+}
+.card {
+    width: 220px;
+    height: 300px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+.card:hover {
+   transform: scale(0.95);
+}
+.card-img {
+    height: 150px;
+    width: 100%;
+    border-radius: 10px;
+}
+.cardLayout {
+    margin: 40px;
+    margin-inline: 70px;
+}
+.logo {
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+.logo:hover {
+  transform: scale(1.1);
+}
+.res-name {
+    min-height: 35px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+.cardDiv {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 1rem;
+}
+.cardDiv a {
+    color: black !important;
+    text-decoration: none !important;
+}
+.res-descr {
+    font-size: 11px;
+    margin-top: 7px;
+}
+.sumary {
+    opacity: 0.6;
+}
+.search-input {
+    display: flex;
+    justify-content: end;
+    margin: 25px;
+}
+.textinput{
+    padding: 5px;
+}
+.searchBtn{
+    background-color: orange;
+    color: #551A8B;
+    border-color: orange;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+.searchBtn:hover{
+    background-color: #551A8B;
+    color: orange;
+    border-color: #551A8B;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+.makeItCen {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.resCardMenu {
+    margin: 3rem;
+    padding: 1.5rem 3rem;
+    background-color: #f0f0f0;
+}
+.resCardMenu div {
+    margin-top: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+.fam {
+    color: red;
+}
+.resCardMenu li {
+    margin-top: 0.5rem;
+}
+.User-card {
+    background-color: #f0f0f0;
+    border: 1px solid black;
+    margin: 20px;
+    padding: 20px;
+}
