@@ -1,3 +1,4 @@
+@import "tailwindcss";
 body {
     margin: 0%;
     padding: 0%;
@@ -23,7 +24,7 @@ body {
 }
 .card {
     width: 220px;
-    height: 300px;
+    height: 330px;
     background-color: #f0f0f0;
     padding: 10px;
     border-radius: 10px;
@@ -95,6 +96,7 @@ body {
     border-color: #551A8B;
     margin-left: 10px;
     border-radius: 5px;
+    cursor: pointer;
 }
 .makeItCen {
     display: flex;
@@ -123,3 +125,4 @@ body {
     margin: 20px;
     padding: 20px;
 }
+

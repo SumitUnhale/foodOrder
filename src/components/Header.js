@@ -6,7 +6,7 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
   return (
     <>
-    <div className="Header">
+    <div className="Header flex">
         <img width={60} className="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSal0nxLnxuil4WuaeUWZc_1RsE5XdoYYuW8D9TCICKV31hiIMCEpYs7HkAXUNUH9bjRmM&usqp=CAU" />
         <ul className="nav-link">
           <Link>onlineStatus : { onlineStatus === false ? "🔴" : "✅"}</Link>

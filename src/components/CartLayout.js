@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import Card from './card';
+import Card, { WithVegList } from './card';
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../utils/useOnlineStatus';
 const CartLayout = () => {
   const [restorantList, setRestorantList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
   const [seacrhVal, setSerachVal] = useState('');
+  const VegCard = WithVegList(Card);
+
   useEffect(()=>{
     fetchData();
   },[])
@@ -15,11 +17,11 @@ const CartLayout = () => {
       // const result1 = await fetch("https://www.swiggy.com/dapi/restaurants/list/update");
       const data = await result.json();
       // const data1 = await result1.json();
-      setFilteredList(data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+      setFilteredList(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants || []);
-      setRestorantList(data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+      setRestorantList(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants || []);
-      console.log("result" , data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+      console.log("result" , data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants || []);
           // console.log("result1" , data1?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle
           // ?.restaurants || []);
@@ -34,18 +36,24 @@ const CartLayout = () => {
   }
 
   const onlineStatus = useOnlineStatus();
-  if(onlineStatus === false) return <h1> You are offline, Please check yours internet connection.</h1>
+  if(onlineStatus === false) return <h1 className='text-2xl'> You are offline, Please check yours internet connection.</h1>
 
   return (
     <div className='cardLayout'>
       <div className='search-input'>
-        <input className='textinput' type='text' onChange={(e) => setSerachVal(e.target.value.trim())} />
-        <button className='searchBtn' onClick={handleClick}> search </button>
+        <input className='textinput border-2 rounded p-2' type='text' onChange={(e) => setSerachVal(e.target.value.trim())} />
+        <button className='searchBtn p-2 rounded-3' onClick={handleClick}> search </button>
       </div>
-      <h1>Restaurants with online food delivery </h1>
+      <h1 className='text-3xl font-bold my-10'>Restaurants with online food delivery </h1>
       <div className='cardDiv'>
         {filteredList.map((restaurant) => (
-          <Link key={restaurant.info.id} to={"/restaurant/"+restaurant.info.id}><Card restaurant={restaurant} /></Link>
+          <Link key={restaurant.info.id} to={"/restaurant/"+restaurant.info.id}>
+            {
+            restaurant.info.veg 
+            ? <VegCard restaurant={restaurant} /> 
+            : <Card restaurant={restaurant} />
+            }
+          </Link>
         ))}
       </div>
     </div>

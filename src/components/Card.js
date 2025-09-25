@@ -30,4 +30,15 @@ const Card = ({ restaurant }) => {
   );
 };
 
+export const WithVegList = (  Card ) => {
+  return (props) => {
+    return (
+      <div>
+        <label className='absolute text-white bg-gray-900 m-2 p-2 rounded-lg'>Pure Veg</label>
+        <Card {...props} />
+      </div>
+    )
+  }
+}
+
 export default Card;
