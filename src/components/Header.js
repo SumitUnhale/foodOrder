@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+
+  const cardItems = useSelector((store) => store.card.items);
+  console.log(cardItems);
+  
 
   const onlineStatus = useOnlineStatus();
   return (
@@ -12,8 +17,9 @@ const Header = () => {
           <Link>onlineStatus : { onlineStatus === false ? "🔴" : "✅"}</Link>
           <Link to="/">Home</Link>
           <Link to="/grocery">Grocery</Link>
-          <Link to="/about">About Us</Link>
-          <Link to="/contact">Contact Us</Link>
+          <Link to="/card">Card - ( { cardItems.length } items )</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
         </ul>
     </div>
     </>

@@ -44,7 +44,7 @@ const CartLayout = () => {
         <input className='textinput border-2 rounded p-2' type='text' onChange={(e) => setSerachVal(e.target.value.trim())} />
         <button className='searchBtn p-2 rounded-3' onClick={handleClick}> search </button>
       </div>
-      <h1 className='text-3xl font-bold my-10'>Restaurants with online food delivery </h1>
+      <h1 className='text-2xl font-bold my-10'>Restaurants with online food delivery </h1>
       <div className='cardDiv'>
         {filteredList.map((restaurant) => (
           <Link key={restaurant.info.id} to={"/restaurant/"+restaurant.info.id}>
